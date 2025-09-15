@@ -28,7 +28,7 @@ MODELOS_CONFIG = {
             'DiaFechamento': Orange.data.DiscreteVariable('DiaFechamento', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira']),
             'secondBestStrategy30Days': Orange.data.DiscreteVariable('secondBestStrategy30Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de alta com PUT', 'Trava de baixa com CALL', 'Trava de baixa com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Calendário curto com PUT']),
             'thirdBestStrategy30Days': Orange.data.DiscreteVariable('thirdBestStrategy30Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Venda Coberta OTM', 'Trava de alta com PUT', 'Trava de baixa com PUT', 'Calendário curto com PUT', 'Venda Coberta ATM', 'Trava de baixa com CALL']),
-            'fourthBestStrategy30Days': Orange.data.DiscreteVariable('fourthBestStrategy30Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de baixa com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de alta com PUT', 'Trava de baixa com CALL'])
+            'fourthBestStrategy30Days': Orange.data.DiscreteVariable('fourthBestStrategy30Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de baixa com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de alta com PUT', 'Trava de baixa com CALL', 'Calendário curto com PUT'])
         }
     },
     # Modelo 2:
@@ -166,6 +166,7 @@ async def predict(payload: PredictionPayload):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao realizar a previsão com o modelo {model_name}. Detalhes: {e}")
+
 
 
 
