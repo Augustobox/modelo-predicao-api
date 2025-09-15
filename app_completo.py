@@ -19,7 +19,7 @@ MODELOS_CONFIG = {
     "ModeloTAP_ETH_2_3.pkcls": {
         "target": "pnlToken",
         "variables": {
-            'bestStrategy7Days': Orange.data.DiscreteVariable('bestStrategy7Days', values=['Asymmetric Wings', 'Iron Condor', 'Trava de alta com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de baixa com PUT', 'Trava de baixa com CALL', 'Trava de alta com CALL', 'Calendário curto com PUT']),
+            'bestStrategy7Days': Orange.data.DiscreteVariable('bestStrategy7Days', values=['Asymmetric Wings', 'Iron Condor', 'Trava de alta com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de baixa com PUT', 'Trava de baixa com CALL', 'Trava de alta com CALL', 'Calendário curto com PUT', 'Iron Fly']),
             'secondBestStrategy7Days': Orange.data.DiscreteVariable('secondBestStrategy7Days', values=['Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de alta com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de baixa com PUT', 'Trava de baixa com CALL', 'Asymmetric Wings', 'Calendário curto com PUT']),
             'thirdBestStrategy7Days': Orange.data.DiscreteVariable('thirdBestStrategy7Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de alta com PUT', 'Trava de baixa com CALL', 'Trava de baixa com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Calendário curto com PUT']),
             'fourthBestStrategy7Days': Orange.data.DiscreteVariable('fourthBestStrategy7Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de baixa com CALL', 'Trava de baixa com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de alta com PUT']),
@@ -166,6 +166,7 @@ async def predict(payload: PredictionPayload):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao realizar a previsão com o modelo {model_name}. Detalhes: {e}")
+
 
 
 
