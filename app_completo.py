@@ -120,6 +120,24 @@ MODELOS_CONFIG = {
             'DiaFechamento': Orange.data.DiscreteVariable('DiaFechamento', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira'])
         }
     },    
+    # Modelo 8:
+    "ModeloTAP_BTC_7D.pkcls": {
+        "target": "pnlToken",
+        "variables": {
+            'Duracao': Orange.data.DiscreteVariable('Duracao', values=['7']),
+            'DiaEmissao': Orange.data.DiscreteVariable('DiaEmissao', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira']),
+            'DiaFechamento': Orange.data.DiscreteVariable('DiaFechamento', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira'])
+        }
+    },    
+    # Modelo 9:
+    "ModeloTAP_ETH_3D.pkcls": {
+        "target": "pnlToken",
+        "variables": {
+            'Duracao': Orange.data.DiscreteVariable('Duracao', values=['3']),
+            'DiaEmissao': Orange.data.DiscreteVariable('DiaEmissao', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira']),
+            'DiaFechamento': Orange.data.DiscreteVariable('DiaFechamento', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira'])
+        }
+    },    
 
 }
 
