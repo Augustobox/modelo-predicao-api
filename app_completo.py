@@ -111,6 +111,15 @@ MODELOS_CONFIG = {
             'fourthBestStrategy30Days': Orange.data.DiscreteVariable('fourthBestStrategy30Days', values=['Asymmetric Wings', 'Iron Condor', 'Iron Fly', 'Trava de alta com CALL', 'Trava de baixa com PUT', 'Venda Coberta ATM', 'Venda Coberta OTM', 'Trava de alta com PUT', 'Trava de baixa com CALL', 'Calendário curto com PUT'])
         }
     },    
+    # Modelo 7:
+    "ModeloTAP_BTC_3D.pkcls": {
+        "target": "pnlToken",
+        "variables": {
+            'Duracao': Orange.data.DiscreteVariable('Duracao', values=['3']),
+            'DiaEmissao': Orange.data.DiscreteVariable('DiaEmissao', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira']),
+            'DiaFechamento': Orange.data.DiscreteVariable('DiaFechamento', values=['domingo', 'quarta-feira', 'quinta-feira', 'sábado', 'segunda-feira', 'sexta-feira', 'terça-feira'])
+        }
+    },    
 
 }
 
@@ -129,6 +138,7 @@ class PredictionPayload(BaseModel):
     secondBestStrategy30Days: str
     thirdBestStrategy30Days: str
     fourthBestStrategy30Days: str
+    Duracao: str
 
 @app.on_event("startup")
 async def load_models():
@@ -199,19 +209,3 @@ async def predict(payload: PredictionPayload):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao realizar a previsão com o modelo {model_name}. Detalhes: {e}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
